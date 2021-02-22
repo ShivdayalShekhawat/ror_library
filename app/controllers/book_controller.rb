@@ -20,9 +20,9 @@ class BookController < ApplicationController
    end
 
 	def create 
-		puts "========================="
-		puts (params[:books][:title].inspect)
-		puts "========================="
+		# puts "========================="
+		# puts (params[:books][:title].inspect)
+		# puts "========================="
 		@book = Book.new(book_params)
 
 		if @book.save

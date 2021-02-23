@@ -1,0 +1,17 @@
+<% @book.each do |c| %>
+		<li>  <%= link_to c.title , :action=>'bookshow' , :id =>c.id -%> </li>
+	
+<% end %>
+
+<% @book.each do |c| %>
+	<li><%=  link_to c.price , :action=> 'bookshow' , :id => c.id -%></li>
+<% end  %>
+
+
+<% @book.each do |c| %>
+<li><%= link_to c.description , :action => 'bookshow' , :id =>c.id -%></li>
+<% end %>
+
+<% @book.each do |c| %>
+	<li> <%= link_to c.subject.name , :action => 'bookshow' , :id=> c.id -%> </li>
+<% end  %>	

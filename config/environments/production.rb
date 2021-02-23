@@ -66,8 +66,10 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+   config.action_mailer.raise_delivery_errors = true
 
+ config.action_mailer.default_url_options = { :host => localhost’ }
+config.action_mailer.perform_deliveries = true
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -117,4 +119,15 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+
+ActionMailer::Base.smtp_settings = { :address => 'mail.ptiwebtech.com',
+  :port => ‘587’,
+  :authentication => :plain, 
+  :user_name => 'shivdayal@ptiwebtech.com',
+  :password => 'tmi@pti!QAZ', 
+  :domain => 'ptiwebtech.com' 
+ }
+ActionMailer::Base.delivery_method = :smtp
+
 end

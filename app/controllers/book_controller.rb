@@ -1,6 +1,10 @@
 class BookController < ApplicationController
 	layout 'standard'
 	
+
+	#validate :title, :price, :subject_id, presence: true
+
+
 	def list
 		@books =Book.all
 	end	
@@ -28,7 +32,7 @@ class BookController < ApplicationController
 		if @book.save
 			redirect_to :action => 'list'
 		else
-			@subject = Subject.all
+			@subjects = Subject.all
 			render :action => 'new'	
 		end	
 	end
@@ -61,7 +65,9 @@ class BookController < ApplicationController
 	end
 
 	def show_subjects
-		@subject = Subject.find(params[:id])
+		
+			@subject = Subject.find(params[:id])
+		
 	end
 
 end

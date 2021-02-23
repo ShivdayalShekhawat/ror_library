@@ -1,8 +1,8 @@
 <h1>Add New Book</h1>
 
-<%= form_tag :action => 'create' do  %>
+<%= form_tag :action => 'create'  , validate: true do |f| %>
 			<p><label for = "book_title">Title</label>:
-			<%= text_field 'books' , 'title' %></p>
+			<%= text_field 'books' , 'title' , validate: true %></p>
 			
 			<p><label for = "book_price">Price</label>:
 			<%= text_field 'books'  , 'price' %>
@@ -11,8 +11,11 @@
 			<%= collection_select(:books,:subject_id , @subjects, :id ,:name , prompt: true)%> </p>
 
 			<p><label for = "book_description">Description</label><br/>
-			<%= text_area  'books'  , 'description' %>	 </p>
-
+			<%= text_area  'books'  , 'description', validate: { presence: true } %>	 </p>
+			
+			
+			
 			<%= submit_tag "Create" %>
+
  <% end -%>
 	<%= link_to 'Back', {:action => 'list'} %>

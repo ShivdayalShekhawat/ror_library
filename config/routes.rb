@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 get "book/list"
 get "book/new"
@@ -10,6 +11,11 @@ get 'book/edit'
 get "book/delete"
 get 'book/update'
 get "book/show_subjects"
+get "testlist/booklist"
+get "testlist/bookshow"
+get "testlist/addnew"
+post "testlist/createbook"
 
 
+root to: 'pages#index'
 end

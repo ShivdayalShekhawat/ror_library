@@ -1,0 +1,19 @@
+<h1>ADD New Book</h1>
+
+
+<%=  form_tag :action => 'createbook' do |f|  -%>
+<p><label for = "book_title">Title</label>:
+<%= text_field 'booksnew' , 'title' -%> </p>
+
+<p><label for = "book_title">Price</label>:
+<%= text_field 'booksnew' , 'price' -%></p>
+
+<p><label for = "book_title">Subject</label>:
+	<%= collection_select(:booksnew   , :subject_id , @subject , :id , :name ) -%></p>
+
+<p><label for = "book_title">Description</label>:
+<%= text_field 'booksnew' , 'description' -%>  </p>	
+
+<%= submit_tag 'Create' -%>
+
+<% end %>	

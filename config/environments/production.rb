@@ -126,7 +126,7 @@ ActionMailer::Base.smtp_settings = { :address => 'mail.ptiwebtech.com',
   :authentication => :plain, 
   :user_name => 'shivdayal@ptiwebtech.com',
   :password => 'tmi@pti!QAZ', 
-  :domain => 'ptiwebtech.com' 
+  :domain => 'localhost' 
  }
 ActionMailer::Base.delivery_method = :smtp
 

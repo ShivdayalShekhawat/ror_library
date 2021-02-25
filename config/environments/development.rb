@@ -80,7 +80,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
 
-  config.action_mailer.default_url_options = { host: 'ptiwebtech.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -88,7 +88,7 @@ Rails.application.configure do
    config.action_mailer.smtp_settings = {
      :address              => "mail.ptiwebtech.com",
      :port                 => 587,
-     :domain               => 'ptiwebtech.com',
+     :domain               => 'localhost',
      :user_name            => 'shivdayal@ptiwebtech.com',
      :password             => 'tmi@pti!QAZ',
      :authentication       => :plain,
